@@ -137,7 +137,7 @@ install_dotfiles () {
   done
 }
 
-setup_gitconfig
+# setup_gitconfig
 install_dotfiles
 
 # If we're on a Mac, let's install and setup homebrew.
@@ -151,6 +151,10 @@ then
     fail "error installing dependencies"
   fi
 fi
+
+# install oh-my-zsh
+# todo: if folder exists, git pull 
+ZSH=$HOME/oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo ''
 echo '  All installed!'
