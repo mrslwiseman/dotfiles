@@ -1,5 +1,7 @@
-# shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
+# oh-my-zsh stuff
+export ZSH=$HOME/.dotfiles/.oh-my-zsh
+source "$HOME/.dotfiles/zsh/oh-my-zsh.zsh"
+source $ZSH/oh-my-zsh.sh
 
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/sine
@@ -14,26 +16,26 @@ fi
 
 # all of our zsh files
 typeset -U config_files
-config_files=($ZSH/**/*.zsh)
+config_files=$(find $HOME/.dotfiles -name '*.zsh' | grep -v 'oh-my-zsh') 
 
-# load the path files
-for file in ${(M)config_files:#*/path.zsh}
+## load the path files
+for file in $(echo $config_files | grep 'path.zsh')
 do
   source $file
 done
 
-# load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+## load everything but the path and completion files
+for file in $(echo $config_files | egrep -v 'path.zsh|completion.zsh')
 do
   source $file
 done
 
-# initialize autocomplete here, otherwise functions won't be loaded
+## initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
 
-# load every completion after autocomplete loads
-for file in ${(M)config_files:#*/completion.zsh}
+## load every completion after autocomplete loads
+for file in $(echo config_files | grep 'completion.zsh')
 do
   source $file
 done
@@ -48,3 +50,7 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
+
+if [[ -d "$HOME/.oh-my-zsh/" ]]; then
+  source "$HOME/.dotfiles/zsh/oh-my-zsh.zsh"
+fi
