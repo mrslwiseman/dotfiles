@@ -36,3 +36,6 @@
 
 [merge]
         ff = only
+#[user]
+#	name = mrslwiseman
+#	email = mrslwiseman@gmail.com
