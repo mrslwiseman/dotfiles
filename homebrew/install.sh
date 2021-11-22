@@ -21,4 +21,6 @@ then
 
 fi
 
+brew install n
+
 exit 0
