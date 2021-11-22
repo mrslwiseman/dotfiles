@@ -1,6 +1,12 @@
 # oh-my-zsh stuff
 export ZSH=$HOME/.dotfiles/.oh-my-zsh
-source "$HOME/.dotfiles/zsh/oh-my-zsh.zsh"
+
+# this assumes script/bootstrap has cloned oh-my-zsh
+if [[ -d "$HOME/.oh-my-zsh/" ]]; then
+  source "$HOME/.dotfiles/zsh/oh-my-zsh.zsh"
+fi
+
+# zsh plugins
 source $ZSH/oh-my-zsh.sh
 
 # your project folder that we can `c [tab]` to
@@ -50,7 +56,3 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
-
-if [[ -d "$HOME/.oh-my-zsh/" ]]; then
-  source "$HOME/.dotfiles/zsh/oh-my-zsh.zsh"
-fi
