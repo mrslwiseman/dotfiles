@@ -27,5 +27,6 @@ kcuc(){
 
   if [[ -n "$namespace" ]]; then
     kubectl config set-context --current --namespace $namespace
+    echo "namespace: $namespace"
   fi
 }
