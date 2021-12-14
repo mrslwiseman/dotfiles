@@ -137,30 +137,20 @@ install_dotfiles () {
   done
 }
 
+# todo: work out why I have to run this 2x
+if [[ ! -d ~/.dotfiles/.oh-my-zsh ]]; then
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+if [[ ! -d  ~/.dotfiles/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]]; then
+ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.dotfiles/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
+
+if [[ ! -d  ~/.dotfiles/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]]; then
+ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.dotfiles/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+fi
+
 # setup_gitconfig
 install_dotfiles
 
-# # If we're on a Mac, let's install and setup homebrew.
-# if [ "$(uname -s)" == "Darwin" ]
-# then
-#   info "installing dependencies"
-#   if source bin/dot | while read -r data; do info "$data"; done
-#   then
-#     success "dependencies installed"
-#   else
-#     fail "error installing dependencies"
-#   fi
-# fi
-
-# install oh-my-zsh
-# todo: if folder exists, git pull 
-set +e
-ZSH=$HOME/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-set -e
-
-echo ''
 echo '  All installed!'

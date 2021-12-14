@@ -1,12 +1,12 @@
 # oh-my-zsh stuff
-export ZSH=$HOME/.dotfiles/.oh-my-zsh
+#export ZSH=$HOME/.dotfiles/.oh-my-zsh
 
-# this assumes script/bootstrap has cloned oh-my-zsh
-if [[ -d "$HOME/.oh-my-zsh/" ]]; then
+## this assumes script/bootstrap has cloned oh-my-zsh
+if [[ -d "$HOME/.dotfiles/.oh-my-zsh/" ]]; then
   source "$HOME/.dotfiles/zsh/oh-my-zsh.zsh"
 fi
 
-# zsh plugins
+## zsh plugins
 source $ZSH/oh-my-zsh.sh
 
 # your project folder that we can `c [tab]` to
