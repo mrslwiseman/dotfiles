@@ -139,7 +139,7 @@ install_dotfiles () {
 
 # todo: work out why I have to run this 2x
 if [[ ! -d ~/.dotfiles/.oh-my-zsh ]]; then
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+ZSH=~/.dotfiles/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
 if [[ ! -d  ~/.dotfiles/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]]; then
