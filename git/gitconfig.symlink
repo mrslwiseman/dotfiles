@@ -30,7 +30,7 @@
         # for more information on different options of the below setting.
         #
         # Setting to git 2.0 default to suppress warning message
-        default = simple
+	default = current
 #[credential]
 #	helper = osxkeychain
 
@@ -39,3 +39,6 @@
 #[user]
 #	name = mrslwiseman
 #	email = mrslwiseman@gmail.com
+[user]
+	email = matt.wiseman@sine.co
+	name = Matt Wiseman
