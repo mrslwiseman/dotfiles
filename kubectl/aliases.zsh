@@ -30,3 +30,5 @@ kcuc(){
     echo "namespace: $namespace"
   fi
 }
+
+export KUBECONFIG=~/.kube/config
