@@ -1,3 +1,3 @@
-jqraw(){
+jqraw() {
   jq --raw-input 'fromjson?' $@
 }
