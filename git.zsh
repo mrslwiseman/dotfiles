@@ -19,7 +19,19 @@ alias gc='git commit'
 alias gca='git commit -a'
 alias gco='git checkout'
 alias gcb='git copy-branch-name'
-alias gb='git branch'
+alias gb='git branch --sort=-committerdate --sort=refname | fzf | xargs git checkout'
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
+
+function gitconfigwork(){
+  echo "setting git work config"...
+  git config --global user.name "Matt Wiseman" && git config --global user.email "matt.wiseman@sine.co"
+  cat ~/.gitconfig
+}
+
+function gitconfigpersonal(){
+  echo "setting git personal config"...
+  git config --global user.name "Matt Wiseman" && git config --global user.email "mrslwiseman@gmail.com"
+  cat ~/.gitconfig
+}

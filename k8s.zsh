@@ -6,16 +6,18 @@ alias kgp='kubectl get pod'
 alias kgap="kubectl get pods -o wide --all-namespaces"
 alias kd='kubectl delete pod'
 
+alias gid='kubectl get deployment $1 -o=jsonpath="{..image}"'
+# alias gid='kubectl get deployment $1 -o=jsonpath="{$.spec.template.spec.containers[:1].image}"'
 # change namespace
 alias kcsc='k config set-context --current --namespace'
 
 # sets the context. optional namespace arg
 # kccu <context> <namespace>
-kcuc(){
-    context=$1
-    namespace=$2
+kcuc() {
+  context=$1
+  namespace=$2
 
-    next_context=""
+  next_context=""
   if [[ "$context" = "eks" ]]; then
     next_context="arn:aws:eks:ap-southeast-2:625704270967:cluster/eksctl-test-03"
   elif [[ $context = "bigbird" ]]; then
@@ -23,7 +25,7 @@ kcuc(){
   else
     next_context="home"
   fi
-    kubectl config use-context $next_context
+  kubectl config use-context $next_context
 
   if [[ -n "$namespace" ]]; then
     kubectl config set-context --current --namespace $namespace
