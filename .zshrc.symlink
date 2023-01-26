@@ -128,11 +128,14 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
-# source all .zsh files
+if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+  curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+      https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+fi
+
+
 for f in $HOME/.dotfiles/*.zsh; do
-    source $f
+  source $f
 done
 
-source $HOME/.localrc >/dev/null
 
-eval "$(starship init zsh)"
