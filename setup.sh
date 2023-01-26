@@ -12,3 +12,12 @@ curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | 
 
 echo "installing starship"
 curl -sS https://starship.rs/install.sh | sh
+
+if [[ "$(uname)" == "Linux" ]]; then
+    echo "This is a Linux system."
+elif [[ "$(uname)" == "Darwin" ]]; then
+    # install fzf key bindings ( linux is sourced automatically )
+    /opt/homebrew/opt/fzf/install
+else
+    echo "This is an unknown operating system."
+fi
