@@ -138,4 +138,4 @@ for f in $HOME/.dotfiles/*.zsh; do
   source $f
 done
 
-
+source $HOME/.localrc
