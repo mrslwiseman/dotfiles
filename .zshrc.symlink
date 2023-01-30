@@ -138,4 +138,13 @@ for f in $HOME/.dotfiles/*.zsh; do
   source $f
 done
 
-source $HOME/.localrc
+# source local vars that I don't want commited to git
+if [[  -e $HOME/.localrc ]]; then
+  source $HOME/.localrc
+fi
+
+# source nix home-manager vars
+source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+
+HISTSIZE=10000
+
