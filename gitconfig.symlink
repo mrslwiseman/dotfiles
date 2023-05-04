@@ -26,6 +26,8 @@
 [help]
         autocorrect = 1
 [push]
+	default = current
+	autoSetupRemote = true
         # See `git help config` (search for push.default)
         # for more information on different options of the below setting.
         #

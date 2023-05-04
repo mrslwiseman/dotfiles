@@ -12,4 +12,3 @@ kcuc() {
     fi
 }
 
-export KUBECONFIG=~/.kube/config

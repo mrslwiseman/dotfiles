@@ -17,7 +17,11 @@ if [[ "$(uname)" == "Linux" ]]; then
     echo "This is a Linux system."
 elif [[ "$(uname)" == "Darwin" ]]; then
     # install fzf key bindings ( linux is sourced automatically )
-    /opt/homebrew/opt/fzf/install
+    # /opt/homebrew/opt/fzf/install
+if [ -n "${commands[fzf-share]}" ]; then
+  source "$(fzf-share)/key-bindings.zsh"
+  source "$(fzf-share)/completion.zsh"
+fi
 else
     echo "This is an unknown operating system."
 fi
