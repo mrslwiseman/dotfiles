@@ -13,4 +13,5 @@ alias kcsc='k config set-context --current --namespace'
 
 # sets the context. optional namespace arg
 
-export KUBECONFIG=~/.kube/config
+#export KUBECONFIG=~/.kube/home-config
+export KUBECONFIG=~/.kube/config-work
