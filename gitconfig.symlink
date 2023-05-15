@@ -4,6 +4,7 @@
 [hub]
         protocol = https
 [alias]
+        st = status
         co = checkout
         promote = !$ZSH/bin/git-promote
         wtf     = !$ZSH/bin/git-wtf
