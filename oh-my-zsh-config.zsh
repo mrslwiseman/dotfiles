@@ -1,11 +1,12 @@
-# plugins=(
-#     git
+plugins=(
+    git
 #     macos
 #     npm
-#     zsh-autosuggestions
-#     zsh-syntax-highlighting
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    docker
 #     zsh-fzf-history-search
-# )
+)
 
 EDITOR=vim
 HISTFILE=~/.zsh_history
