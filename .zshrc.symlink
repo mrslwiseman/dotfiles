@@ -139,3 +139,4 @@ for f in $HOME/.dotfiles/*.zsh; do
 done
 
 source $HOME/.localrc
+export PATH=$PATH:/usr/local/go/bin
