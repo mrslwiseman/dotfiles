@@ -42,6 +42,3 @@
 [merge]
         ff = only
 
-[user]
-	email = matt.wiseman@sine.co
-	name = Matt Wiseman

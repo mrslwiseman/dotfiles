@@ -15,6 +15,7 @@ curl -sS https://starship.rs/install.sh | sh
 
 if [[ "$(uname)" == "Linux" ]]; then
     echo "This is a Linux system."
+    sudo apt install zoxide fzf
 elif [[ "$(uname)" == "Darwin" ]]; then
     # install fzf key bindings ( linux is sourced automatically )
     # /opt/homebrew/opt/fzf/install
