@@ -1,10 +1,13 @@
 echo "linking .zimrc file"
+rm $HOME/.zimrc
 ln -s $HOME/.dotfiles/.zimrc.symlink $HOME/.zimrc
 
 echo "linking .zshrc file"
+rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/.zshrc.symlink $HOME/.zshrc
 
 echo "linking .gitconfig file"
+rm $HOME/.gitconfig
 ln -s $HOME/.dotfiles/gitconfig.symlink $HOME/.gitconfig
 
 echo "installing zim"
